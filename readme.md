@@ -2,7 +2,7 @@
 
 # 유니티 연습
 
-그냥 유니티가 해보고 싶어서 만든 프로젝트<br>
+그냥 유니티가 해보고 싶어서 만든 프로젝트<br><br>
 골드메탈님의 유튜브를 보고 함. [YouTube](https://www.youtube.com/watch?v=7plGPXkmnxQ&list=PLO-mt5Iu5TeYI4dbYwWP8JqZMC9iuUIW2&index=2&ab_channel=%EA%B3%A8%EB%93%9C%EB%A9%94%ED%83%88)
 
 <br><br><br>
@@ -11,10 +11,13 @@
 
 - [Life Cycle](##-Life-Cycle)
 - [Input](##-Input)
+- [Transform](##-Transform)
 
 ---
 
 ## Life Cycle
+
+[코드](./Assets/LifeCycle.cs)
 
 ```
 Life Cycle(생명주기)는 프로그램의 흐름이다.
@@ -52,6 +55,8 @@ OnDisable() :
 ---
 
 ## Input
+
+[코드](./Assets/InputTest.cs)
 
 ```
 유니티는 Input 클래스에서 입력과 관련된 메소드를 제공한다.
@@ -119,7 +124,24 @@ OnDisable() :
         Input Manager에 설정된 대로 flaot 값을 리턴한다
         즉, 중간값 X
 
+```
+
+---
+
+## Transform
+
+[코드](./Assets/TransformTest.cs)
+
+```
+유니티에서 모든 오브젝트에는 Transform 클래스가 요구되고 transform으로 이미 선언되어 있다.
+위치, 회전, 크기를 담당하며 초기값은 유니티 화면에서 설정한 값으로 되어 있다.
+
+Vector3 :
+    3차원 백터를 나타내는 Struct이다.
+    Constructors : Vector3(x, y, z) // x,y,z 는 숫자
 
 
+transform.Translate( new Vector3(x, y, z) ) // x,y,z 는 숫자
+    위치를 입력 받은 Vecter3만큼 움직임
 
 ```
