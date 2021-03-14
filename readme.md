@@ -11,7 +11,7 @@
 
 - [Life Cycle](#life-cycle)
 - [Input](#input)
-- [Transform & Vector3](#transform-&-vector3)
+- [Transform & Vector3](#transform--vector3)
 
 ---
 
