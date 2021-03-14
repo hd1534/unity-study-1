@@ -9,13 +9,13 @@
 
 # 목차
 
-- [Life Cycle](##-Life-Cycle)
-- [Input](##-Input)
-- [Transform](##-Transform)
+- [Life Cycle](#life-cycle)
+- [Input](#input)
+- [Transform & Vector3](#transform-&-vector3)
 
 ---
 
-## Life Cycle
+## [Life Cycle](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
 
 [코드](./Assets/LifeCycle.cs)
 
@@ -54,7 +54,7 @@ OnDisable() :
 
 ---
 
-## Input
+## [Input](https://docs.unity3d.com/ScriptReference/Input.html)
 
 [코드](./Assets/InputTest.cs)
 
@@ -128,7 +128,7 @@ OnDisable() :
 
 ---
 
-## Transform
+## [Transform ](https://docs.unity3d.com/ScriptReference/Transform.html)[& Vector3](https://docs.unity3d.com/ScriptReference/Vector3.html)
 
 [코드](./Assets/TransformTest.cs)
 
@@ -140,8 +140,38 @@ Vector3 :
     3차원 백터를 나타내는 Struct이다.
     Constructors : Vector3(x, y, z) // x,y,z 는 숫자
 
+Vector3.MoveTowards( current, target, maxDistanceDelta ) :
+    현재위치에서 maxDistanceDelta 만큼 target을 향해서 움직였을시 위치할 백터를 계산함.
+    current, target 은 Vector3 타입,
+    maxDistanceDelta는 float 타입
+    ex) transform.position = Vector3.MoveTowards(a,b,c)
+
+Vector3.SmoothDamp( current, target, currentVelocity, smoothTime, [etc] )
+    MoveTowards랑 비슷한데 속도가 부드럽게 올라갔다 내려감
+    current, target 은 Vector3 타입,
+    currentVelocity는 ref Vector3 타입,
+    smoothTime은 float 타입
+    ex) transform.position = Vector3.SmoothDamp(a, b, ref c, d)
+
+Vector3.Lerp( start, end, t )
+    선형 보간 이동, equals to a + (b - a) * t.
+    start, end는 Vector3 타입
+    t 는 남은 거리의 몇 퍼센트를 움직일지
+    ex) transform.position = Vector3.Lerp(a,b,c)
+
+Vector3.Slerp( start, end, t )
+    구면 선형 보간 이동
+    선형 보간 이동을 구면 위에서 하는 것 처럼 원을 그리며 움직임
+    start, end는 Vector3 타입
+    t 는 남은 거리의 몇 퍼센트를 움직일지
+    ex) transform.position = Vector3.Slerp(a,b,c)
+
+
+transform.position :
+    public Vector3 position;
+    The world space position of the Transform.
 
 transform.Translate( new Vector3(x, y, z) ) // x,y,z 는 숫자
-    위치를 입력 받은 Vecter3만큼 움직임
+    현재 위치에서 입력 받은 Vecter3만큼 움직임
 
 ```
