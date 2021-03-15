@@ -12,6 +12,7 @@
 - [Life Cycle](#life-cycle)
 - [Input](#input)
 - [Transform & Vector3](#transform--vector3)
+- [Time](#time)
 
 ---
 
@@ -135,6 +136,7 @@ OnDisable() :
 ```
 유니티에서 모든 오브젝트에는 Transform 클래스가 요구되고 transform으로 이미 선언되어 있다.
 위치, 회전, 크기를 담당하며 초기값은 유니티 화면에서 설정한 값으로 되어 있다.
+여기에 있는 함수들은 호출시마다 움직이는 함수이므로 우리가 흔히 생각하는 m/s 같은걸 위해선 Time.deltaTime을 곱해줘야 한다.
 
 Vector3 :
     3차원 백터를 나타내는 Struct이다.
@@ -173,5 +175,20 @@ transform.position :
 
 transform.Translate( new Vector3(x, y, z) ) // x,y,z 는 숫자
     현재 위치에서 입력 받은 Vecter3만큼 움직임
+
+```
+
+---
+
+# [Time](https://docs.unity3d.com/ScriptReference/Time.html)
+
+[코드](./Assets/TransformTest.cs)
+
+```
+유니티에서 시간 관련된 정보를 제공하는 클래스
+
+Time.deltaTime :
+    public static float deltaTime;
+    프레임과 프레임 사이의 시간을 나타냄
 
 ```

@@ -27,24 +27,25 @@ public class TransformTest : MonoBehaviour
             0
         );
 
-        transform.Translate(vec);
+        transform.Translate(vec * Time.deltaTime);
         */
 
         /* MoveTowards
         transform.position = Vector3.MoveTowards(
-            transform.position, target, 1f
+            transform.position, target, 1f * Time.deltaTime
         );
         */
 
         /* SmoothDamp
         transform.position = Vector3.SmoothDamp(
-            transform.position, target, ref velocity, 1f
+            transform.position, target, ref velocity, 1f,
+            maxSpeed: Mathf.Infinity, deltaTime: Time.deltaTime
         );
         */
 
         // Slerp
         transform.position = Vector3.Slerp(
-            transform.position, target, 0.005f
+            transform.position, target, 1  * Time.deltaTime
         );
     }
 }
