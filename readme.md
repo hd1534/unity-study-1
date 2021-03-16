@@ -9,10 +9,49 @@
 
 # 목차
 
+- [Component](#component)
 - [Life Cycle](#life-cycle)
 - [Input](#input)
 - [Transform & Vector3](#transform--vector3)
 - [Time](#time)
+
+---
+
+## [Component](https://docs.unity3d.com/ScriptReference/Component.html)
+
+```
+Base class for everything attached to GameObjects.
+
+Material :
+    오브젝트의 표면 재질
+    재질을 적용하려면 새로 생성해서 편집하고 적용해야 됨
+    사진을 가져와 Texture로 사용 가능
+
+    Metalic : 금속 재질 수치
+    Smoothness : 빛 반사 수치
+    Texture : 재질에 들어가는 이미지
+    Tiling : 텍스쳐 반복 타일 갯수
+    Emission : 텍스쳐 발광(밝기) 조절 & 빛이 물리적으로 나오는건 아님.
+
+Physics Material :
+    물리적 특성
+
+    Bounciness : 탄성력
+        Bounciness Combine : 다음 탄성을 계산하는 방식
+    Static Friction : 정지 마찰력
+    Dynamic Friction : 운동 마찰력
+
+Collider :
+    충돌 범위
+
+Rigidbody :
+    물리효과를 받기 위한 컴포넌트
+
+    mass : 질량
+    Use Gravity : 체크시 중력의 영향을 받음
+    is Kinematic : 체크시 외부 물리효과 무시
+
+```
 
 ---
 
