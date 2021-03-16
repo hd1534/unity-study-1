@@ -14,6 +14,7 @@
 - [Input](#input)
 - [Transform & Vector3](#transform--vector3)
 - [Time](#time)
+- [UI](#ui)
 
 ---
 
@@ -261,4 +262,25 @@ Time.deltaTime :
     public static float deltaTime;
     프레임과 프레임 사이의 시간을 나타냄
 
+```
+
+---
+
+# [UI](https://youtu.be/k4YUJy-otDs?list=PLO-mt5Iu5TeYI4dbYwWP8JqZMC9iuUIW2)
+
+```
+UI들은 계층구조의 순서대로 그린다
+
+Canvas :
+    UI가 그려지는 도화지 역할인 컴포넌트
+
+Text :
+    글 적을때
+
+Image :
+    이미지 표시 (sprite 이미지)
+
+Button :
+    클릭 이벤트를 가지고 있는 반응형 UI
+    버튼 안에 Text 필드가 있다.
 ```

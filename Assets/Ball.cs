@@ -31,4 +31,8 @@ public class Ball : MonoBehaviour
         if(other.name == "JumpArea")
             rigid.AddForce(Vector3.up, ForceMode.Impulse);
     }
+
+    public void set() {
+        transform.position = new Vector3(-2.75999999f,0.437168121f,-0.600000143f);
+    }
 }
