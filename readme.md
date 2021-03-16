@@ -19,6 +19,8 @@
 
 ## [Component](https://docs.unity3d.com/ScriptReference/Component.html)
 
+[코드](./Assets/ball.cs)
+
 ```
 Base class for everything attached to GameObjects.
 
@@ -44,12 +46,23 @@ Physics Material :
 Collider :
     충돌 범위
 
+    Is Trigger : 체크시 해당 오브젝트는 물리엔진이 작동 안하고 영역 트리거로 작동함
+
 Rigidbody :
     물리효과를 받기 위한 컴포넌트
+    관련된 코드는 FixedUpdate가 권장
 
     mass : 질량
     Use Gravity : 체크시 중력의 영향을 받음
     is Kinematic : 체크시 외부 물리효과 무시
+
+    velocity : Vector3값으로 받고 코딩을 통해 수정 가능
+    AddForce(Vector3, ForceMode) : Vector3의 크기와 방향으로 힘을줌
+    AddTorque(Vector3) : Vec 방향을 축으로 회전력이 생김
+
+
+GetComponent<T>() :
+    자신(해당 스크립트가 적용된 오브젝트)의 T타입의 컴포넌트를 가져옴
 
 ```
 
@@ -57,7 +70,7 @@ Rigidbody :
 
 ## [Life Cycle](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
 
-[코드](./Assets/LifeCycle.cs)
+[코드1](./Assets/LifeCycle.cs), [코드2](./Assets/DummyBall.cs)
 
 ```
 Life Cycle(생명주기)는 프로그램의 흐름이다.
@@ -89,6 +102,24 @@ OnEnable() :
 
 OnDisable() :
     게임 오브젝트가 비활성화 되었을 때 실행
+
+OnCollisionEnter(Collision) :
+    물리적 충돌을 시작시 실행
+
+OnCollisionStay(Collision) :
+    물리적 충돌을 하는 중일때 실행
+
+OnCollisionExit(Collision) :
+    물리적 충돌이 끝날시 실행
+
+OnTriggerEnter(Collider) :
+    콜라이더 충돌(영역겹침) 시 실행
+
+OnTriggerStay(Collider) :
+    콜라이더 충돌(영역겹침) 는 중일때 실행
+
+OnTriggerExit(Collider) :
+    콜라이더 충돌(영역겹침)이 끝날시 실행
 
 ```
 
