@@ -11,9 +11,11 @@
 
 - [Component](#component)
 - [Life Cycle](#life-cycle)
+- [Game Object](#game-object)
 - [Input](#input)
 - [Transform & Vector3](#transform--vector3)
 - [Time](#time)
+- [Scene](#Scene)
 - [UI](#ui)
 
 ---
@@ -60,6 +62,13 @@ Rigidbody :
     velocity : Vector3값으로 받고 코딩을 통해 수정 가능
     AddForce(Vector3, ForceMode) : Vector3의 크기와 방향으로 힘을줌
     AddTorque(Vector3) : Vec 방향을 축으로 회전력이 생김
+
+AudioSource :
+    사운드 재생 컴포넌트로 AudioClip 필요
+
+Tag :
+    오브젝트를 구분하는 tag
+    사용 전에 tags and layers manager에서 선언해야됨
 
 
 GetComponent<T>() :
@@ -121,6 +130,21 @@ OnTriggerStay(Collider) :
 
 OnTriggerExit(Collider) :
     콜라이더 충돌(영역겹침)이 끝날시 실행
+
+```
+
+---
+
+## [Game Object](https://docs.unity3d.com/ScriptReference/GameObject.html)
+
+```
+Base class for all entities in Unity Scenes.
+
+gameObject.SetActive( bool ) :
+    오브젝트를 활성화 하거나 비활성화 한다.
+
+GameObject.FindGameObjectWithTag("TagName") :
+    테그 이름으로 오브젝트 찾기
 
 ```
 
@@ -244,8 +268,12 @@ transform.position :
     public Vector3 position;
     The world space position of the Transform.
 
-transform.Translate( new Vector3(x, y, z) ) // x,y,z 는 숫자
+transform.Translate( new Vector3(x, y, z) ) : // x,y,z 는 숫자
     현재 위치에서 입력 받은 Vecter3만큼 움직임
+
+transform.Rotate(Vector3, Space) :
+    백터방향을 기준축으로 회전.
+    space는 월드기준인지 로컬 기준인지 명시
 
 ```
 
@@ -261,6 +289,20 @@ transform.Translate( new Vector3(x, y, z) ) // x,y,z 는 숫자
 Time.deltaTime :
     public static float deltaTime;
     프레임과 프레임 사이의 시간을 나타냄
+
+```
+
+---
+
+# [Scene](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.html)
+
+```
+SceneManager :
+    class in UnityEngine.SceneManagement/Implemented in:UnityEngine.CoreModule
+
+SceneManager.LoadScene("SceneName") :
+    주어진 씬을 불러오는 함수
+    단, 빌드 설정에 들어있는 씬만 불러옴
 
 ```
 
